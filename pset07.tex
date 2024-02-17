@@ -49,19 +49,48 @@ A \textit{rational number} can be written as $\frac{p}{q}$ where $p$ and $q$ are
 \question
   Show through contraposition: If $x^2 - 6x + 5$ is even, then $x$ is odd.
   \begin{solution}
-    % Enter your solution here.
+    To prove: $Even(x^2 - 6x + 5) \implies Even(x)$, where $x\in\Z$.
+
+    As indicated, we attempt a proof by contraposition.
+
+    \begin{proof}
+      Consider $x=2k$ for some $k\in\Z$.\\
+      Then, $x^2 - 6x + 5 = 4k^2 - 12k + 5 = 2(2k^2 - 6k + 2) + 1$.
+    \end{proof}
   \end{solution}
 
 \question Provide a counterexample to disprove: If $n$ is an integer and $n^2$ is divisible by 4, then $n$ is divisible by 4. Explain why it is a counterexample.
 
   \begin{solution}
-    % Enter your solution here.
+    The given statement is: $n^2\mod 4 = 0 \implies n\mod 4 = 0$, where $n\in\Z$. 
+
+    As indicated, we attempt a disproof by counterexample.
+
+    \begin{proof}
+      One counterexample is $n=6$.
+    \end{proof}
+        
+    For this value, $n^2=36=4(9)$ but $n=6$ cannot be written as an integer multiple of 4.
   \end{solution}
   
 \question Prove using contradiction that $\sqrt{2}$ is irrational.
 
   \begin{solution}
-    % Enter your solution here.
+    Let $p: \sqrt{2}$ is irrational.
+
+    We prove $p$ by contradiction.
+
+    \begin{proof}
+      Assume that $\sqrt{2}$ is rational.\\
+      Then $\sqrt{2} =\frac{p}{q}$ for some integers $p$ and $q$ where $q\neq0$ and $\frac{p}{q}$ is irreducible, i.e. it cannot be simplified further.\\
+      Then $2 =\frac{p^2}{q^2}$ and $p^2 =2q^2$.\\
+      That is, $p^2$ is even, and therefore, using a result from the book, $p$ is also even.\\
+      That is, $p=2k_1$ for some $k_1\in\Z$.\\
+      Since, $p^2=2q^2$, we get $4k_1^2 = 2q^2$ and $q^2=2k_1^2$.\\
+      By similar reasoning as above, $q=2k_2$ for some $k_2\in\Z$.\\
+      Then, $\frac{p}{q} = \frac{2k_1}{2k_2}= \frac{k_1}{k_2}$.\\
+      But $\frac{p}{q}$ was irreducible. $\qquad {\color{red}\bot}$
+    \end{proof}
   \end{solution}
   
 \fullwidth{For each of the following problems, clearly mention the proof method that you employ.}
@@ -69,27 +98,80 @@ A \textit{rational number} can be written as $\frac{p}{q}$ where $p$ and $q$ are
 \question Prove that for $n\in\Z$, $n$ is odd if and only if $5n + 6$ is odd.
 
   \begin{solution}
+    To prove: For the domain of $\Z$, $\forall n\exists k_1\exists k_2(n=2k_1+1\iff 5n+5=2k_2+1)$.
+    
+    This is a biconditional statement and is proved through two conditional statements.
+
+    \begin{proof}[To prove:] if $n$ is odd, then $5n+6$ is odd.\\
+      We attempt a direct proof.\\
+      We know that $n=2k+1$ from some $k\in\Z$.\\
+      Then $5n+6=10k+5+6=10k+11=2(5k+5)+1$.\\
+    \end{proof}
+    \begin{proof}[To prove:] if $5n+6$ is odd, then $n$ is odd.\\
+      We attempt a proof by contraposition.\\
+      Assume that $n$ is even. That is, $n=2k$ from some $k\in\Z$.\\
+      Then $5n+6=10k+6=2(5k+3)$.
+    \end{proof}
     % Enter your solution here.
   \end{solution}
 
 \question Prove or disprove: The sum of a rational and an irrational number is a rational number.
 
   \begin{solution}
-    % Enter your solution here.
+    To prove: The sum of a rational and an irrational number is a rational number.
+
+      We attempt a proof by contradiction.
+
+      \begin{proof}
+        Consider a rational number $x =\frac{p_1}{q_1}, q_1\neq 0$ and an irrational number $y$.\\
+        Assume that their sum is rational, i.e. $x+y=\frac{p_2}{q_2}, q_2\neq 0$.\\
+        Then, $y = x+y - x = \frac{p_2}{q_2} - \frac{p_1}{q_1} = \frac{p_2q_1-p_1q_2}{q_1q_2}$, and $q_1q_2\neq 0$.\\
+        That is, $y$ is rational. $\qquad{\color{red}\bot}$
+      \end{proof}
     \end{solution}
   
 \question Prove or disprove that for $(x^2 - y^2) \mod 4 \neq 2$ where $x$ and $y$ are integers.\\
   \textit{Hint}: a) Consider the different cases of parities of $x$ nd $y$. b) Use the method of \textit{proof by cases} and apply a proof \textit{without loss of generality} described in Section 1.8.2 in the book.
 
   \begin{solution}
-    % Enter your solution here.
+    To prove: $\forall x\in\Z\forall y\in\Z((x^2 - y^2) \mod 4 \neq 2)$.
+    
+    
+
+    \begin{proof} We consider the possible parities of $x$ and $y$ and prove the statement for each case.
+    \begin{proof}[Case 1:] Both $x$ and $y$ are even.\\
+      Then $x=2k_1, y=2k_2$ for some integers $k_1$ and $k_2$.\\
+      Then $x^2-y^2=4k_1^2-4k_2^2=4(k_1^2-k_2^2)$.\\
+      Then $(x^2 - y^2) \mod 4 = 0$.
+    \end{proof}
+    
+    \begin{proof}[Case 2:] Both $x$ and $y$ are odd.\\
+      Then $x=2k_1+1, y=2k_2+1$ for some integers $k_1$ and $k_2$.\\
+      Then $x^2-y^2=4k_1^2+4k_1+1-4k_2^2-4k_2-1=4(k_1^2+k_1-k_2^2-k_2)$.\\
+      Then $(x^2 - y^2) \mod 4 = 0$.
+    \end{proof}      
+    \begin{proof}[Case 3:] \textit{wlog} $x$ is even and $y$ is odd.\\
+      Then $x=2k_1, y=2k_2+1$ for some integers $k_1$ and $k_2$.\\
+      Then $x^2-y^2=4k_1^2-4k_2^2-4k_2-1=4(k_1^2-k_2^2-k_2)-1$.\\
+      Then $(x^2 - y^2) \mod 4 = 3$.
+    \end{proof}
+    
+    \end{proof}
   \end{solution}
 
 \question 
   Prove or disprove that $2^n + 1$ is prime for every $n\in\Z^+$.
 
   \begin{solution}
-    % Enter your solution here.
+    The given statement is: $2^n + 1$ is prime for every $n\in\Z^+$.
+
+    We provide a disproof by counterexample.
+
+    \begin{proof}
+      One counterexample is $n=3$.
+    \end{proof}
+        
+    For this value, $2^n+1=9$ which is not prime.
   \end{solution}
 \end{questions}
 \end{document}
